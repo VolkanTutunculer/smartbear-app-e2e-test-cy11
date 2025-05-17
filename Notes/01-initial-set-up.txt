@@ -1,0 +1,135 @@
+
+Design:
+
+	PAGES:
+		LoginPage
+		BasePage
+			WebOrdersPage
+			WebOrdersProductsPage
+			WebOrdersProcessPage
+
+
+
+6 test cases
+2 positive - login and logout
+4 negative - invalid credentials
+
+
+Create an Automation Framework
+	-Cypress for UI - API automation
+	-TDD Approach (Test-Driven Development)
+	-Version Control - GIT
+
+
+1. Create a new folder and give a proper name for your framework
+	smartbear-app-e2e-tests
+
+2. Run below command to start a new Node/NPM project
+	npm init -y
+
+3. Install Cypress dependency
+	npm i cypress -D
+	npm install cypress --save-dev
+
+4. Run below command to launch Cypress Test Runner
+	npx cypress open
+
+5. Run a simple test to make sure set up is good so far like visiting a url
+
+6. To design your first scripts, create page object models
+	LoginPage
+	BasePage
+
+7. Complete/run your first script
+
+8. Organize env variables, test accounts to read them better instead of hard-coding
+
+9. Set up .env with dotenv dependency
+	a. Install dependency: npm i dotenv -D
+	b. Create .env file in root path and add useful properties (environment variables)
+	c. Set cypress.config.js to be able to read properties from .env
+	d. Read these in your scripts instead of hard coded values
+
+
+10. Push the set up and DEMO!
+	git init
+	.gitignore file to add all the files that should not be pushed
+	remote repo - link
+
+
+
+- Test Case Management: JIRA or Azure DevOps
+
+1. Write a Test Case
+2. Manually test it with JIRA - Zephyr (or Azure DevOps Test Plans/Suites)
+3. Automate it with Cypress (or Playwright)
+
+@Smoke
+Validate login with valid credentials
+	Go to "http://secure.smartbearsoftware.com/samples/testcomplete12/WebOrders/login.aspx"
+	Enter username as "Tester"
+	Enter password as "test"
+	Click on "Login" button
+	Validate user is logged in
+	Validate url contains "weborders"
+	Validate "Welcome, Tester!" is visible
+	Validate "Logout" button is visible
+	Validate "Web Orders" heading is visible
+
+@Smoke
+Validate logout
+	Go to "http://secure.smartbearsoftware.com/samples/testcomplete12/WebOrders/login.aspx"
+	Enter username as "Tester"
+	Enter password as "test"
+	Click on "Login" button
+	Click on "Logout" button
+	Validate url contains "Login"
+	Validate login form is visible
+
+@Smoke
+Validate login with empty credentials
+	Go to "http://secure.smartbearsoftware.com/samples/testcomplete12/WebOrders/login.aspx"
+	Click on "Login" button
+	Validate "Invalid Login or Password." error is visible
+	Validate url contains "Login"
+
+@Smoke
+Validate login with invalid username
+	Go to "http://secure.smartbearsoftware.com/samples/testcomplete12/WebOrders/login.aspx"
+	Enter username as "InvalidUsername"
+	Enter password as "test"
+	Click on "Login" button
+	Validate "Invalid Login or Password." error is visible
+	Validate url contains "Login"
+
+
+@Smoke
+Validate login with invalid password
+	Go to "http://secure.smartbearsoftware.com/samples/testcomplete12/WebOrders/login.aspx"
+	Enter username as "Tester"
+	Enter password as "InvalidPassword"
+	Click on "Login" button
+	Validate "Invalid Login or Password." error is visible
+	Validate url contains "Login"
+
+
+@Smoke
+Validate login with invalid credentials
+	Go to "http://secure.smartbearsoftware.com/samples/testcomplete12/WebOrders/login.aspx"
+	Enter username as "InvalidUsername"
+	Enter password as "InvalidPassword"
+	Click on "Login" button
+	Validate "Invalid Login or Password." error is visible
+	Validate url contains "Login"
+
+
+
+
+
+
+
+1. 5 days
+Explore the app and some flows
+Requested access to: ADO, GIT, VS Code, Server Access
+
+App (with some test account), Node.js, Documentation

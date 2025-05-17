@@ -1,0 +1,84 @@
+Design:
+
+	PAGES:
+		LoginPage
+		BasePage
+			WebOrdersPage
+			WebOrdersProductsPage
+			WebOrdersProcessPage
+
+
+
+6 test cases
+2 positive - login and logout
+4 negative - invalid credentials
+
+
+Create an Automation Framework
+	-Cypress for UI - API automation
+	-TDD Approach (Test-Driven Development)
+	-Version Control - GIT
+
+- Test Case Management: JIRA or Azure DevOps
+
+1. Write a Test Case
+2. Manually test it
+3. Automate it
+
+@Smoke
+Validate login with valid credentials
+	Go to "http://secure.smartbearsoftware.com/samples/testcomplete12/WebOrders/login.aspx"
+	Enter username as "Tester"
+	Enter password as "test"
+	Click on "Login" button
+	Validate user is logged in
+	Validate url contains "weborders"
+	Validate "Welcome, Tester!" is visible
+	Validate "Logout" button is visible
+	Validate "Web Orders" heading is visible
+
+@Smoke
+Validate logout
+	Go to "http://secure.smartbearsoftware.com/samples/testcomplete12/WebOrders/login.aspx"
+	Enter username as "Tester"
+	Enter password as "test"
+	Click on "Login" button
+	Click on "Logout" button
+	Validate url contains "Login"
+	Validate login form is visible
+
+@Smoke
+Validate login with empty credentials
+	Go to "http://secure.smartbearsoftware.com/samples/testcomplete12/WebOrders/login.aspx"
+	Click on "Login" button
+	Validate "Invalid Login or Password." error is visible
+	Validate url contains "Login"
+
+@Smoke
+Validate login with invalid username
+	Go to "http://secure.smartbearsoftware.com/samples/testcomplete12/WebOrders/login.aspx"
+	Enter username as "InvalidUsername"
+	Enter password as "test"
+	Click on "Login" button
+	Validate "Invalid Login or Password." error is visible
+	Validate url contains "Login"
+
+
+@Smoke
+Validate login with invalid password
+	Go to "http://secure.smartbearsoftware.com/samples/testcomplete12/WebOrders/login.aspx"
+	Enter username as "Tester"
+	Enter password as "InvalidPassword"
+	Click on "Login" button
+	Validate "Invalid Login or Password." error is visible
+	Validate url contains "Login"
+
+
+@Smoke
+Validate login with invalid credentials
+	Go to "http://secure.smartbearsoftware.com/samples/testcomplete12/WebOrders/login.aspx"
+	Enter username as "InvalidUsername"
+	Enter password as "InvalidPassword"
+	Click on "Login" button
+	Validate "Invalid Login or Password." error is visible
+	Validate url contains "Login"
