@@ -1,7 +1,6 @@
 export default class LoginPage {
-
-   getLoginForm() {
-    return cy.get('#aspnetForm');
+  getLoginForm() {
+    return cy.get("#aspnetForm");
   }
 
   getUsernameInput() {
@@ -22,20 +21,24 @@ export default class LoginPage {
 
   // Reusable methods for login page
   enterUsername(username) {
-   if(username) this.getUsernameInput().type(username);
+    if (username) this.getUsernameInput().type(username);
   }
 
   enterPassword(password) {
-   if(password) this.getPasswordInput().type(password);
+    if (password) this.getPasswordInput().type(password);
   }
 
   clickOnLoginButton() {
     this.getLoginButton().click();
   }
 
-  login(username, password) {
+  login(username, password, click = true) {
     this.enterUsername(username);
+    if(click){
     this.enterPassword(password);
     this.clickOnLoginButton();
+    }
+
+    else this.getPasswordInput().type(`${password}{enter}`);
   }
 }
