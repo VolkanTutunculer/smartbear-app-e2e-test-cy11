@@ -55,9 +55,7 @@ describe('Login Verification', () => {
   ].forEach((creds) => {
     it(`TG11S-T164 - Validate login with invalid credentials ${creds.title}`, () => {
       
-
-      if(creds.username === '' && creds.password === '') loginPage.clickOnLoginButton();
-      else loginPage.login(creds.username, creds.password);
+ loginPage.login(creds.username, creds.password);
 
       cy.url().should("include", "login");
       loginPage.getErrorMessage().should('have.text', 'Invalid Login or Password.');
