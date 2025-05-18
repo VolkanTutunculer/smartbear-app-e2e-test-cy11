@@ -6,7 +6,7 @@ module.exports = defineConfig({
   viewportWidth: 1920,
   env: {
     APP_BASE_URL: process.env.APP_BASE_URL,
-    USERNAME: process.env.USERNAME,
+    APP_USERNAME: process.env.APP_USERNAME,
     PASSWORD: process.env.PASSWORD
   },
   e2e: {

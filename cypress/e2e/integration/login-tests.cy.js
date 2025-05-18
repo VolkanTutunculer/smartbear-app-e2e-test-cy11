@@ -10,12 +10,12 @@ describe('Login Verification', () => {
   it('Validate login with valid credentials', () => {
     cy.visit(Cypress.env('APP_BASE_URL'));
 
-    loginPage.login(Cypress.env('USERNAME'), Cypress.env('PASSWORD'));
+    loginPage.login(Cypress.env('APP_USERNAME'), Cypress.env('PASSWORD'));
 
     cy.url().should('include', 'weborders');
 
     basePage.getWebOrdersHeading().should('have.text', 'Web Orders');
     basePage.getLogoutButton().should('have.text', 'Logout');
-    basePage.getWelcomeUserInfo().should('include.text', Cypress.env('USERNAME'));
+    basePage.getWelcomeUserInfo().should('include.text', Cypress.env('APP_USERNAME'));
   })
 });
