@@ -31,6 +31,7 @@ describe('Login Verification', () => {
     loginPage.getLoginForm().should("be.visible");
   });
 
+  
   [
     {
       title:'empty creds',
