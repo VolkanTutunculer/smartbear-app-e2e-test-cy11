@@ -22,11 +22,11 @@ export default class LoginPage {
 
   // Reusable methods for login page
   enterUsername(username) {
-    this.getUsernameInput().type(username);
+   if(username) this.getUsernameInput().type(username);
   }
 
   enterPassword(password) {
-    this.getPasswordInput().type(password);
+   if(password) this.getPasswordInput().type(password);
   }
 
   clickOnLoginButton() {
