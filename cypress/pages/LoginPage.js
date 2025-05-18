@@ -1,4 +1,9 @@
 export default class LoginPage {
+
+   getLoginForm() {
+    return cy.get('#aspnetForm');
+  }
+  
   getUsernameInput() {
     return cy.get("#ctl00_MainContent_username");
   }
