@@ -15,3 +15,7 @@
 
 // Import commands.js using ES2015 syntax:
 import './commands'
+
+beforeEach(() => {
+  cy.visit(Cypress.env("APP_BASE_URL"));
+});

@@ -6,9 +6,7 @@ const loginPage = new LoginPage();
 const basePage = new BasePage();
 
 describe("Login Verification", () => {
-  beforeEach(() => {
-    cy.visit(Cypress.env("APP_BASE_URL"));
-  });
+
 
   it("Validate login with valid credentials", () => {
     loginPage.login(Cypress.env("APP_USERNAME"), Cypress.env("PASSWORD"));
