@@ -1,0 +1,45 @@
+Additional Login Tests
+
+Validate login with valid credentials and ENTER
+	Go to "http://secure.smartbearsoftware.com/samples/testcomplete12/WebOrders/login.aspx"
+	Enter username as "Tester"
+	Enter password as "test"
+	Hit "ENTER" or "RETURN" key on the keyboard
+	Validate user is logged in
+	Validate url contains "weborders"
+	Validate "Welcome, Tester!" is visible
+	Validate "Logout" button is visible
+	Validate "Web Orders" heading is visible
+
+
+Validate the password input is masked
+	Go to "http://secure.smartbearsoftware.com/samples/testcomplete12/WebOrders/login.aspx"
+	Validate the password input has a type attribute value equals "password"
+
+
+
+Property vs Attribute
+<tag id="value" class="value1 value2 value3" style="color:red">visible-text</tag>
+
+
+
+Base Test Case
+Validate main content after login
+Go to "http://secure.smartbearsoftware.com/samples/testcomplete12/WebOrders/login.aspx"
+Login with valid username and password
+Validate 3 left panel options are visible
+	View all orders
+	View all products
+	Order
+Validate each left-panel option triggers their content on the right panel
+Validate a respective heading is visible on the right panel
+	List of All Orders
+	List of Products
+	Order
+Validate content-table is visible for each left panel option on the right panel
+
+
+
+
+
+//table

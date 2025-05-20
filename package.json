@@ -3,13 +3,16 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "test:smoke": "npx cypress run --env grep='@Smoke'",
+    "test:regression": "npx cypress run --env grep='@Regression'"
   },
   "keywords": [],
   "author": "SmartBear",
   "license": "ISC",
   "description": "",
   "devDependencies": {
+    "@cypress/grep": "^4.1.0",
     "cypress": "^14.3.3",
     "dotenv": "^16.5.0"
   }

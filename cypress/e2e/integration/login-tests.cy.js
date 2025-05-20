@@ -5,7 +5,7 @@ import LoginPage from "../../pages/LoginPage";
 const loginPage = new LoginPage();
 const basePage = new BasePage();
 
-describe("Login Verification", () => {
+describe("Login Verification @Smoke", () => {
 
 
   it("Validate login with valid credentials", () => {
@@ -60,7 +60,7 @@ describe("Login Verification", () => {
   });
 });
 
-describe("Login Verification - Additional Tests", () => {
+describe("Login Verification - Additional Tests @Smoke", () => {
   beforeEach(() => {
     cy.visit(Cypress.env("APP_BASE_URL"));
   });

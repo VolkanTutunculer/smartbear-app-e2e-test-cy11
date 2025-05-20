@@ -1,0 +1,27 @@
+
+How to group together Cypress tests in suites such as Smoke
+and Regression and run them with CLI command?
+
+1. Install grep dependency
+	npm i @cypress/grep -D
+
+2. Make the changes to apply grep dependency in your project
+	a. import the dependency in support/e2e.js file
+		const registerCypressGrep = require('@cypress/grep')
+		registerCypressGrep()
+
+	b. update cypress.config.js file
+	e2e: {
+    setupNodeEvents(on, config) {
+      require('@cypress/grep/src/plugin')(config); // this line needs to be added
+      return config; //this line needs to be added
+    },
+  },
+
+3. Mark your tests as @Smoke and @Regression
+4. Run commands to execute tags specified
+	npx cypress run --env grepTags=@Smoke
+	npx cypress run --env grepTags=@Regression
+
+5. Create more custom scripts in package.json and use these tags to fetch/filter some tests with specified tags
+6. Run scripts in Terminal
