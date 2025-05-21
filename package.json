@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "test:smoke": "npx cypress run --env grep='@Smoke'",
-    "test:regression": "npx cypress run --env grep='@Regression'"
+    "test": "npx cypress run",
+    "test:smoke": "npx cypress run --env grep=@Smoke",
+    "test:regression": "npx cypress run --env grep=@Regression"
   },
   "keywords": [],
   "author": "SmartBear",

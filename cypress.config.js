@@ -9,11 +9,19 @@ module.exports = defineConfig({
     APP_USERNAME: process.env.APP_USERNAME,
     PASSWORD: process.env.PASSWORD,
   },
-  reporter: "cypress-mochawesome-reporter",
+  reporter: 'cypress-mochawesome-reporter',
+  reporterOptions: {
+    charts: true,
+    reportPageTitle: 'SmartBear App Test Report',
+    embeddedScreenshots: true,
+    inlineAssets: true,
+    saveAllAttempts: false,
+    overwrite: false
+  },
   e2e: {
     setupNodeEvents(on, config) {
-      require("cypress-mochawesome-reporter/plugin")(on);
-      require("@cypress/grep/src/plugin")(config);
+      require('cypress-mochawesome-reporter/plugin')(on);
+      require('@cypress/grep/src/plugin')(config);
       return config;
     },
   },
