@@ -5,16 +5,16 @@ on:
   pull_request:
     branches: [master]
 
-  jobs:
-    cypress-run:
-      runs-on: ubuntu-latest
-      steps:
-        - name: Checkout
-          uses: actions/checkout@v4
+jobs:
+  cypress-run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
 
-        - name: Install Dependencies and Run Smoke Tests
-          uses: cypress-io/github-action@v6
-          with:
-            browser: chrome
-            headed: false
-            command: npm run test:smoke
+      - name: Install Dependencies and Run Smoke Tests
+        uses: cypress-io/github-action@v6
+        with:
+          browser: chrome
+          headed: false
+          command: npm run test:smoke
