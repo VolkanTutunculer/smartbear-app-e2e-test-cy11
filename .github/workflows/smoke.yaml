@@ -8,6 +8,10 @@ on:
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
+    env:
+      APP_BASE_URL: ${{ vars.APP_BASE_URL }}
+      APP_USERNAME: ${{ vars.APP_USERNAME }}
+      PASSWORD: ${{ vars.PASSWORD }}
 
     steps:
       - name: Checkout
@@ -19,7 +23,3 @@ jobs:
           browser: chrome
           headed: false
           command: npm run test:smoke
-        env:
-          APP_BASE_URL: ${{ secrets.APP_BASE_URL }}
-          APP_USERNAME: ${{ secrets.APP_USERNAME }}
-          PASSWORD: ${{ secrets.PASSWORD }}
